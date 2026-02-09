@@ -8,14 +8,13 @@ class Solution:
     def balanceBST(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
         li = []
         def convert(r):
-            li.append(r.val)
             if r.left:
                 convert(r.left)
+            li.append(r.val)
             if r.right:
                 convert(r.right)
         
         convert(root)
-        li.sort()
 
         def create(a, b):
             if a > b:
