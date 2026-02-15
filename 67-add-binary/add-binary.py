@@ -1,19 +1,17 @@
 class Solution:
     def addBinary(self, a: str, b: str) -> str:
-        a = [int(i) for i in a]
-        b = [int(i) for i in b]
+        a = [int(i) for i in a[::-1]]
+        b = [int(i) for i in b[::-1]]
         c = []
         prev = 0
-        aa = len(a)
-        bb = len(b)
-        while aa or bb:
+        while a or b:
             cur = 0
-            if aa:
-                cur += a[aa - 1]
-                aa -= 1
-            if bb:
-                cur += b[bb - 1]
-                bb -= 1
+            if a:
+                cur += a[0]
+                a.pop(0)
+            if b:
+                cur += b[0]
+                b.pop(0)
             cur += prev
             prev = cur // 2
             cur %= 2
