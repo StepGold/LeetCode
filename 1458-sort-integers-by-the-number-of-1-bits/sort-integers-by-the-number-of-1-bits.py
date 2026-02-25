@@ -1,6 +1,7 @@
 class Solution:
     def sortByBits(self, arr: List[int]) -> List[int]:
         m = max(arr)
+        arr.sort()
         r = 0
         i = 0
         while 2**i < m:
@@ -17,5 +18,5 @@ class Solution:
 
         r = []
         for i in li:
-            r+= list(sorted(i))
+            r+= i
         return r
