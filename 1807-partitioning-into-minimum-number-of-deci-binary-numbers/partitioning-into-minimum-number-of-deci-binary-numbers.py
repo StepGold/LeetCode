@@ -1,3 +1,3 @@
 class Solution:
     def minPartitions(self, n: str) -> int:
-        return int(max(n))
+        return ord(max(n)) - ord('0')
